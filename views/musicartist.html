@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UgaaMux - Music Artist Registration</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/musicartist.css" />
+  <link rel="stylesheet" href="/css/generalCss.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h4>Music Artist Registration Form</h4>
+    <form name="musicArtists" id="musicartistForm" method="POST" action="/api/musiclabel" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li><label for="userid">Artist ID</label></li>
+            <li><input type="text" name="txtArtistID" id="artsitID" placeholder="Enter Artist ID" /></li>
+            <small id="artistIDErr"></small>
+
+            <li><label for="firstname">First Name</label></li>
+            <li><input type="text" name="txtfirstName" id="fstname" placeholder="Enter Real First Name" /></li>
+            <small id="fstnameErr"></small>
+
+            <li><label for="lastname">Last Name</label></li>
+            <li><input type="text" name="txtlastName" id="lstname" placeholder="Enter Real Last Name" /></li>
+            <small id="lstnameErr"></small>
+
+            <li><label for="Telephone">Last Name</label></li>
+            <li><input type="text" name="txtTelephone" id="telephone" placeholder="Enter Telephone" /></li>
+            <small id="telephoneErr"></small>
+
+            <li><label for="emailAddress">Email Address</label></li>
+            <li><input type="email" name="email" id="txtemail" placeholder="Enter Email Address" /></li>
+            <small id="emailErr"></small>
+
+            <li><label for="Password">Password</label></li>
+            <li><input type="password" name="password" id="txtpwd" placeholder="Enter a Minimum of 8 Character" /></li>
+            <small id="passwordErr"></small>
+
+            <li><label for="DateofBith">Date of Birth</label></li>
+            <li><input type="date" name="txtDoB" data-date-inline-picker="true" placeholder="Enter the Date of Birth" />
+            </li>
+            <small id="DoBErr"></small>
+
+            <li><label for="gender">Gender</label>
+              <input type="radio" id="male" name="txtSex" size="25"><span>Male</span>
+              <input type="radio" id="female" name="txtSex" size="25"><span>Female</span>
+            </li>
+            <small id="genderError"></small>
+
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><label for="District">Artist Location</label></li>
+            <li><input type="text" name="txtDistrict" id="district" placeholder="Enter artist District" /></li>
+            <small id="districtErr"></small>
+
+            <li><label for="singleHit">Number of Singles</label></li>
+            <li><input type="number" name="txtSingles" id="singles" placeholder="Enter Number of Hits" /></li>
+            <small id="singlesErr"></small>
+
+            <li><label for="Aliasname">Alias Name</label></li>
+            <li><input type="text" name="txtAliasname" id="aliasname" placeholder="Enter Stage name" /></li>
+            <small id="aliasnameErr"></small>
+
+            <li><label for="NINno">NIN Number</label></li>
+            <li><input type="text" name="txtNIN" id="NIN" placeholder="Enter NIN Number" /></li>
+            <small id="ninErr"></small>
+
+            <li><label for="albumnumber">Number of Albums</label></li>
+            <li><input type="number" name="txtAlbums" id="albums" placeholder="Enter Number of Albums" /></li>
+            <small id="albumsErr"></small>
+
+            <li><label for="whereBased">Where Artist is based</label></li>
+            <li><input type="text" name="txtBased" id="based" placeholder="Enter where artist is based" /></li>
+            <small id="basedErr"></small>
+
+            <li><label for="Datestarted">Date started singing</label></li>
+            <li><input type="date" name="txtdatestarted" data-date-inline-picker="true"
+                placeholder="Enter the Date of Birth" /></li>
+            <small id="startErr"></small>
+
+            <li><label for="profile">Profile Picture</label> </li>
+            <li><input type="file" id="avatar" name="Profilepic" accept="image/png, image/jpeg"></li>
+            <small id="avatarErr"></small>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="bottoms">
+        <input type="submit" value="Submit" />
+        <a href="index.html">Return to Dashboard</a>
+      </div>
+    </form>
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/musicartistValidate.js"></script>
+</body>
+
+</html>

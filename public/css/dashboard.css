@@ -1,0 +1,52 @@
+html {
+    font-family: sans-serif;
+    color: #333;
+    background-image: url('/img/ugaamux-musician-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body {
+  height: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding-top: 60px;
+  
+}
+.container{
+    border: 1px solid #aaa;
+    background-color: white;
+    border-radius: 10px;
+    padding-right: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* text-align: center; */
+}
+.container ul li{
+    list-style: none;
+    text-align: center;
+}
+.container h3, p {
+    text-align: center;
+  }
+  h2 img{
+      width: 150px;
+      color: indigo;
+      display: block;
+      margin: auto;
+  }
+.btn2{
+  padding: 10px 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color:#333;
+  background-color: goldenrod;
+  margin: 10px auto;
+  cursor: pointer;
+
+}
+.btn2:hover{
+    background-color: transparent;
+    border: 1px solid goldenrod;
+}

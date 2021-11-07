@@ -1,0 +1,107 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title UgaaMux - Music Band Registration
+    link(href='/css/bootstrap.min.css' rel='stylesheet')
+    link(rel='stylesheet' href='/css/musicBands.css')
+    link(rel='stylesheet' href='/css/generalCss.css')
+  body
+    .container
+      h4 Music Band Registration Form
+      form#musicbandsForm(name='musicBands' method='POST' action='/bandinfo/musicbands' enctype='multipart/form-data')
+        .row
+          .col
+            ul
+              li
+                label(for='userrole') User Role
+              li
+                select#userRole(name='txtuserRole')
+                  option(selected='' value='default') Please Select the User Role
+                  option(value='clerk')  Clerk 
+                  option(value='artist')  Artist 
+                small#userRoleErr
+              li
+                label(for='bandName') Band Name
+              li
+                input#bdname(type='text' name='txtbandName' placeholder='Enter Real Band Name')
+              small#bandNameErr
+              li
+                label(for='bandHome') Band Home
+              li
+                input#bandHome(type='text' name='txtbandHome' placeholder='Enter the Band Home')
+              small#bandHomeErr
+              li
+                label(for='owner') Band Owner
+              li
+                input#bandOwner(type='text' name='txtbandOwner' placeholder='Enter Owners Real Name ')
+              span(style='margin-left: 110px; font-size: 10px; color: red;')
+                | Separate them with comma, if more than
+                | 1
+              small#bandownerErr
+              li
+                label(for='Telephone') Telephone Number
+              li
+                input#telephone(type='text' name='txttelephone' placeholder='Enter Telephone')
+              small#telephoneErr
+              li
+                label(for='emailAddress') Email Address
+              li
+                input#txtemail(type='email' name='email' placeholder='Enter Email Address')
+              small#emailErr
+              li
+                label(for='Password') Password
+              li
+                input#txtpwd(type='password' name='password' placeholder='Enter a Minimum of 8 Character')
+              small#passwordErr
+              li
+                label(for='DateofFormation') Date of Formation
+              li
+                input(type='date' name='txtformationDate' data-date-inline-picker='true' placeholder='Enter the Date of Birth')
+              small#dateErr
+          .col
+            ul
+              li
+                label(for='NumberofMembers') Number of Members
+              li
+                input#numberofMembers(type='number' name='txtnumberofMembers' placeholder='Enter Number of Members in the Group')
+              small#membersErr
+              li
+                label(for='Sponsor')  Name of Sponsor(s)
+              li
+                input#Sponsorname(type='text' name='txtSponsornames' placeholder='Enter Name of Sponsor')
+              small#sponsornameErr(style='font-size: 10px; color: red;')
+                | Optional Field, separate them with
+                | comma,
+              li
+                label(for='albumnumber') Number of Albums
+              li
+                input#albums(type='number' name='txtnumberofAlbums' placeholder='Enter Number of Albums')
+              small#albumsErr
+              li
+                label(for='slogan') Band Slogan
+              li
+                input#bandSlogan(type='text' name='txtbandSlogan' placeholder='Enter the Bands Slogan')
+              small#sloganErr
+              li
+                label(for='crowns') Crowns if Any
+              li
+                input#crowns(type='number' name='txtcrownsWon' placeholder='Enter the Number of Crowns')
+              small#crownErr Optional Field, separate them with comma,
+              li
+                label(for='Music Category') Category of Music
+              li
+                input#Category(type='text' name='txtmusicCategory' placeholder='Enter the Category of Music')
+              small#categoryErr
+              li
+                label(for='profile') Band Icon
+              li
+                input#avatar(type='file' name='txtbandicon' accept='image/png, image/jpeg')
+              small#bandiconErr
+        .bottoms
+          input(type='submit' value='Submit')
+          a(href='http://localhost:3000/') Return to Dashboard
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/musicbandValidate.js')

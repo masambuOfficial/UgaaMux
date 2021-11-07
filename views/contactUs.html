@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/generalCss.css">
+  <link rel="stylesheet" href="/css/contactUs.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3><a href="#"><img src="/img/ugaamux-logo-01.svg" alt="UgaaMux"></a></h3>
+      </div>
+      <ul>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#"> Contact Us</a></li>
+      </ul>
+
+      <div id="bottoms">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="#"><img src="/img/fallyIpupa.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            <div class="carousel-item">
+              <a href="#"><img src="/img/musicEvent.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            <div class="carousel-item">
+              <a href="#"><img src="/img/ntaateAudio.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy</a> </li>
+          <li><a href="#">Terms</a> </li>
+        </ul>
+        <hr>
+
+        <ul>
+          <li><a href="#"><img src="/img/facebook.svg" alt=""></a></li>
+          <li><a href="#"><img src="/img/twitter.svg" alt=""></a></li>
+          <li><a href="#"><img src="/img/youtube.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Page Content -->
+    <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col" id="form-main">
+            <h1>Contact Us</h1>
+            <p>UgaaMux a hub of Art and Expression</p>
+            <form name="contactUs" id="contactUsForm" enctype="multipart/form-data">
+              <ul>
+                <li>
+                  <input type="text" name="txtfullName" placeholder="Enter your Fullname here">
+                  <small id="fullnameErr"></small>
+                </li>
+                <li>
+                  <input type="email" name="txtemail" placeholder="Enter your email Address here">
+                  <small id="emailErr"></small>
+                </li>
+                <li>
+                  <input type="tel" name="txtTelephone" placeholder="Enter your telephone number here">
+                  <small id="telephoneErr"></small>
+                </li>
+                <li>
+                  <textarea name="txtmessage" id="message" cols="30" rows=""
+                    placeholder="Leave us a message and we shall revert in 48 Hours"></textarea>
+                </li>
+              </ul>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          <div class="col" id="form-image">
+            <img src="/img/contactUsimages-01.svg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/contactvalidate.js"></script>
+</body>
+
+</html>

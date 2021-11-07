@@ -1,0 +1,106 @@
+body{
+    background:url(/img/ugaamux-musician-banner.jpg);
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+}
+.container{
+    width: 80%;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+}
+.container h4{
+    text-align: center;
+}
+form{
+    width: 100%;
+}
+/* .container ul {
+    width: 40%;
+    height: 450px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #2e2e2e;
+} */
+.container ul li label {
+    float: left;
+    clear: left;
+    width: 100px;
+    /* text-align: right; */
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.container ul li {
+    list-style: none;
+    margin-top: 5px;
+    border-top: 1px dotted rgb(225, 225, 225, .6);
+}
+.container input{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.container input[type=text],input[type=email],input[type=number], input[type=date], input[type=password] {
+    padding: 2px 5px;
+    width: 60%;
+}
+
+.container input[type=radio]{
+    margin-top: 10px;
+}
+.container ul li span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.bottoms input[type=submit] {
+    border: none;
+    padding: 10px 50px;
+    background-color:#EF8800;
+    font-size: 16px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.bottoms input[type=submit]:hover{
+    background-color: transparent;
+    border: 1px solid #EF8800;
+}
+.bottoms a {
+    text-decoration: none;
+}
+.bottoms{
+    text-align: center;
+    margin: 10px auto;
+}
+#crownErr{
+    margin-left: 110px; 
+    color: red; 
+    font-size: 10px;
+}
+/* Tablet and Screens less than 992px */
+@media screen and (max-width: 992px) {
+    .container{
+        margin-top: 350px;
+        margin-bottom: 500px;
+    }
+    .container input[type=text],input[type=email],input[type=number], input[type=date], input[type=password] {
+        padding: 2px 5px;
+        width: 90%;
+    }
+    .bottoms input[type=submit] {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    #crownErr{
+        margin-left: 0px; 
+        color: red; 
+        font-size: 12px;
+    }
+  }

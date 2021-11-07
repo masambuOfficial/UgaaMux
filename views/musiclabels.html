@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UgaaMux - Music Artist Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/musicBands.css" />
+  <link rel="stylesheet" href="/css/generalCss.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h4>Music Label Registration Form</h4>
+    <form name="musicLabels" id="musiclabelsForm" method="POST" action="/api/musiclabel" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li><label for="labelID">Label ID</label></li>
+            <li><input type="text" name="txtlabelID" id="labelID" placeholder="Enter the Label ID" /></li>
+            <small id="labelidErr"></small>
+
+            <li><label for="userrole">User Role</label></li>
+            <li><select name="txtuserRole" id="userRole">
+                <option selected="" value="Default">Please Select the User Role</option>
+                <option value="clerk"> Clerk </option>
+                <option value="artist"> Artist </option>
+              </select>
+              <small id="userRoleErr"></small>
+            </li>
+
+            <li><label for="labelName">Label Name</label></li>
+            <li><input type="text" name="txtlabelName" id="labelname" placeholder="Enter Real Label Name" /></li>
+            <small id="lbnameErr"></small>
+
+            <li><label for="labelHome">Label Home</label></li>
+            <li><input type="text" name="txtlabelHome" id="labelHome" placeholder="Enter the label Home" /></li>
+            <small id="labelHomeErr"></small>
+
+            <li><label for="owner">Label Owner</label></li>
+            <li><input type="text" name="txtlabelOwner" id="labelOwner" placeholder="Enter Owner's Real Name " /></li>
+            <small id="labelownerErr"></small>
+
+            <li><label for="Telephone">Telephone Number</label></li>
+            <li><input type="text" name="txtphone" id="telephone" placeholder="Enter the label Telephone" /></li>
+            <small id="telErr"></small>
+
+            <li><label for="emailAddress">Email Address</label></li>
+            <li><input type="email" name="email" id="txtemail" placeholder="Enter Email Address" /></li>
+            <small id="emailErr"></small>
+
+            <li><label for="emailAddress">Password</label></li>
+            <li><input type="password" name="password" id="txtpwd" placeholder="Enter Password" /></li>
+            <small id="pwdErr"></small>
+
+            <li><label for="DateofBith">Date of Formation</label></li>
+            <li><input type="date" name="txtformationDate" data-date-inline-picker="true"
+                placeholder="Enter the Date of Birth" /></li>
+            <small id="dateErr"></small>
+
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><label for="Sponsor"> Name of Sponsor</label></li>
+            <li><input type="text" name="txtSponsorname" id="Sponsorname" placeholder="Enter Name of Sponsor" />
+            </li><span
+              style="font-size: 12px; font-style: italic; font-weight: bold; margin-left: 110px; color: red;">Optional
+              field</span>
+
+            <li><label for="slogan">Label Slogan</label></li>
+            <li><input type="text" name="txtlabelSlogan" id="labelSlogan" placeholder="Enter the Label's Slogan" /></li>
+            <small id="sloganErr"></small>
+
+            <li><label for="Members">Number of Members</label></li>
+            <li><input type="number" name="txtmembers" id="Member" placeholder="Enter the Number of members" /></li>
+            <small id="membersErr"></small>
+
+            <li><label for="ArtistManaged">Names of Artist Managed</label></li>
+            <li><input type="text" name="txtmanaged" id="managed" placeholder="Enter the names of artist managed" />
+              <br><span style="font-size: 10px; font-style: italic; font-weight: bold;">Separate names with a
+                comma,</span>
+            </li>
+            <small id="manageErr"></small>
+
+            <li><label for="profile">Label Icon</label> </li>
+            <li><input type="file" id="labelIcon" name="txtlabelIcon" accept="image/png, image/jpeg"></li>
+            <small id="labeliconErr"></small>
+          </ul>
+        </div>
+        <div class="col">
+
+          <ul>
+            <h6 style="font-size: 12px; font-weight: bold;">Music Album Details</h6>
+            <li><label for="albumName">Album Name</label></li>
+            <li><input type="text" name="txtalbumName" id="albumname" placeholder="Enter Album Name" /></li>
+            <small id="albumNameErr"></small>
+
+            <li><label for="songName">Names of Songs</label></li>
+            <li><input type="text" name="txtsongName" id="songName"
+                placeholder="Enter the names of for a particular Album" /> <br><span
+                style="font-size: 12px; font-style: italic; font-weight: bold;">Separate names with a comma,</span>
+            </li>
+            <small id="songnameErr"></small>
+
+            <li><label for="Songs">Number of Songs</label></li>
+            <li><input type="number" name="txtsongs" id="songs"
+                placeholder="Enter the Number of Songs on a particular Album" /></li>
+            <small id="songsnumberErr"></small>
+
+            <li><label for="profile">Album Cover</label> </li>
+            <li><input type="file" id="albumCover" name="txtalbumCover" accept="image/png, image/jpeg"></li>
+            <small id="albumcoverErr"></small>
+          </ul>
+        </div>
+      </div>
+      <div class="bottoms">
+        <input type="submit" value="Submit" />
+        <a href="/views/index.html">Return to Dashboard</a>
+      </div>
+    </form>
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/musiclabelValidate.js"></script>
+</body>
+
+</html>

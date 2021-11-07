@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    link(href='/css/bootstrap.min.css' rel='stylesheet')
+    link(rel='stylesheet' href='/css/generalCss.css')
+    link(rel='stylesheet' href='/css/contactUs.css')
+  body
+    .wrapper
+      // Sidebar
+      nav#sidebar
+        .sidebar-header
+          h3
+            a(href='#')
+              img(src='/img/ugaamux-logo-01.svg' alt='UgaaMux')
+        ul
+          li
+            a(href='#') Events
+          li
+            a(href='#') Features
+          li
+            a(href='#')  Contact Us
+        #bottoms
+          #carouselExampleSlidesOnly.carousel.slide(data-bs-ride='carousel')
+            .carousel-inner
+              .carousel-item.active
+                a(href='#')
+                  img.d-block.w-100(src='/img/fallyIpupa.jpg' alt='...')
+              .carousel-item
+                a(href='#')
+                  img.d-block.w-100(src='/img/musicEvent.jpg' alt='...')
+              .carousel-item
+                a(href='#')
+                  img.d-block.w-100(src='/img/ntaateAudio.jpg' alt='...')
+          ul
+            li
+              a(href='#') Help Center
+            li
+              a(href='#') Privacy
+            li
+              a(href='#') Terms
+          hr
+          ul
+            li
+              a(href='#')
+                img(src='/img/facebook.svg' alt='')
+            li
+              a(href='#')
+                img(src='/img/twitter.svg' alt='')
+            li
+              a(href='#')
+                img(src='/img/youtube.svg' alt='')
+      // Page Content
+      #content
+        .container
+          .row
+            #form-main.col
+              h1 Contact Us
+              p UgaaMux a hub of Art and Expression
+              form#contactUsForm(name='contactUs' method='POST' action='/contactinfo/contactUs' enctype='multipart/form-data')
+                ul
+                  li
+                    input(type='text' name='txtfullName' placeholder='Enter your Fullname here')
+                    small#fullnameErr
+                  li
+                    input(type='email' name='txtemail' placeholder='Enter your email Address here')
+                    small#emailErr
+                  li
+                    input(type='tel' name='txtTelephone' placeholder='Enter your telephone number here')
+                    small#telephoneErr
+                  li
+                    textarea#message(name='txtmessage' cols='30' rows='' placeholder='Leave us a message and we shall revert in 48 Hours')
+                input(type='submit' value='Submit')
+            #form-image.col
+              img(src='/img/contactUsimages-01.svg' alt='')
+      script(src='/js/bootstrap.min.js')
+      script(src='/js/contactvalidate.js')

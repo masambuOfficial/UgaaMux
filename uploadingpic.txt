@@ -1,0 +1,23 @@
+router.post(
+    '/artistregistrationform', 
+    upload.single('pictureupload'), 
+    
+    async (req, res) => {
+  console.log(req.body);
+  try {
+    const artistReg = new ArtistsReg(req.body);
+    artistReg.pictureupload = req.file.path;
+    console.log(artistReg);
+    console.log('This is the image you want to upload', req.file);
+    await ArtistsReg.register(artistReg, req.body.password, (err) => {
+      if (err) {
+        throw err;
+        console.log('Data has not been posted', err);
+      }
+      res.redirect('/artistinfo/artistregistrationform'); 
+    });
+  } catch (err) {
+    res.status(400).send('Sorry! Data was not sent to DB');
+    console.log(err); 
+  }
+});

@@ -1,0 +1,18 @@
+** {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+#icon{
+    margin: 50px auto;
+    text-align: center;
+}
+#icon img{
+    width: 10%;
+}
+#search {
+    width: 760px;
+    margin: 20px auto;
+}
+#search i{
+    cursor: pointer;
+}

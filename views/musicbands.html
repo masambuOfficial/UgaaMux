@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UgaaMux - Music Artist Registration</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/musicBands.css" />
+  <link rel="stylesheet" href="/css/generalCss.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h4>Music Band Registration Form</h4>
+    <form name="musicBands" id="musicbandsForm">
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li><label for="userrole">User Role</label></li>
+            <li><select name="txtuserRole" id="userRole">
+                <option selected="" value="default">Please Select the User Role</option>
+                <option value="clerk"> Clerk </option>
+                <option value="artist"> Artist </option>
+              </select><small id="userRoleErr"></small>
+
+            </li>
+
+            <li><label for="bandName">Band Name</label></li>
+            <li><input type="text" name="txtbandName" id="bdname" placeholder="Enter Real Band Name" /></li>
+            <small id="bandNameErr"></small>
+
+            <li><label for="bandHome">Band Home</label></li>
+            <li><input type="text" name="txtbandHome" id="bandHome" placeholder="Enter the Band Home" /></li>
+            <small id="bandHomeErr"></small>
+
+            <li><label for="owner">Band Owner</label></li>
+            <li><input type="text" name="txtbandOwner" id="bandOwner" placeholder="Enter Owners Real Name " /></li>
+            <span style="margin-left: 110px; font-size: 10px; color: red;">Separate them with comma, if more than
+              1</span>
+            <small id="bandownerErr"></small>
+
+            <li><label for="Telephone">Telephone Number</label></li>
+            <li><input type="text" name="txttelephone" id="telephone" placeholder="Enter Telephone" /></li>
+            <small id="telephoneErr"></small>
+
+            <li><label for="emailAddress">Email Address</label></li>
+            <li><input type="email" name="email" id="txtemail" placeholder="Enter Email Address" /></li>
+            <small id="emailErr"></small>
+
+            <li><label for="Password">Password</label></li>
+            <li><input type="password" name="password" id="txtpwd" placeholder="Enter a Minimum of 8 Character" /></li>
+            <small id="passwordErr"></small>
+
+            <li><label for="DateofFormation">Date of Formation</label></li>
+            <li><input type="date" name="txtformationDate" data-date-inline-picker="true"
+                placeholder="Enter the Date of Birth" /></li>
+            <small id="dateErr"></small>
+
+
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><label for="NumberofMembers">Number of Members</label></li>
+            <li><input type="number" name="txtnumberofMembers" id="numberofMembers"
+                placeholder="Enter Number of Members in the Group" /></li>
+            <small id="membersErr"></small>
+
+            <li><label for="Sponsor"> Name of Sponsor(s)</label></li>
+            <li><input type="text" name="txtSponsornames" id="Sponsorname" placeholder="Enter Name of Sponsor" /></li>
+            <small id="sponsornameErr" style="font-size: 10px; color: red;">Optional Field, separate them with
+              comma,</small>
+
+            <li><label for="albumnumber">Number of Albums</label></li>
+            <li><input type="number" name="txtnumberofAlbums" id="albums" placeholder="Enter Number of Albums" /></li>
+            <small id="albumsErr"></small>
+
+            <li><label for="slogan">Band Slogan</label></li>
+            <li><input type="text" name="txtbandSlogan" id="bandSlogan" placeholder="Enter the Bands Slogan" /></li>
+            <small id="sloganErr"></small>
+
+            <li><label for="crowns">Crowns if Any</label></li>
+            <li><input type="number" name="txtcrownsWon" id="crowns" placeholder="Enter the Number of Crowns" /></li>
+            <small id="crownErr">Optional Field, separate them with comma,</small>
+
+            <li><label for="Music Category">Category of Music</label></li>
+            <li><input type="text" name="txtmusicCategory" id="Category" placeholder="Enter the Category of Music" />
+            </li>
+            <small id="categoryErr"></small>
+
+            <li><label for="profile">Band Icon</label> </li>
+            <li><input type="file" id="avatar" name="txtbandicon" accept="image/png, image/jpeg"></li>
+            <small id="bandiconErr"></small>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="bottoms">
+        <input type="submit" value="Submit" />
+        <a href="http://localhost:3000/">Return to Dashboard</a>
+      </div>
+    </form>
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/musicbandValidate.js"></script>
+</body>
+
+</html>

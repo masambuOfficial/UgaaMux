@@ -1,0 +1,114 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title UgaaMux - Music Artist Registration
+    link(href='/css/bootstrap.min.css' rel='stylesheet')
+    link(rel='stylesheet' href='/css/musicartist.css')
+    link(rel='stylesheet' href='/css/generalCss.css')
+  body
+    .container
+      h4 Music Artist Registration Form
+      form#musicartistForm(name='musicArtists' method='POST' action='/artistinfo/musicartist' enctype='multipart/form-data')
+        .row
+          .col
+            ul
+              li
+                label(for='userid') Artist ID
+              li
+                input#artsitID(type='text' name='txtArtistID' placeholder='Enter Artist ID')
+              small#artistIDErr
+              li
+                label(for='userrole') User Role
+              li
+                select#userRole(name='txtuserRole')
+                  option(selected='' value='Default') Please Select the User Role
+                  option(value='clerk')  Clerk 
+                  option(value='artist')  Artist 
+                small#userRoleErr
+              li
+                label(for='firstname') First Name
+              li
+                input#fstname(type='text' name='txtfirstName' placeholder='Enter Real First Name')
+              small#fstnameErr
+              li
+                label(for='lastname') Last Name
+              li
+                input#lstname(type='text' name='txtlastName' placeholder='Enter Real Last Name')
+              small#lstnameErr
+              li
+                label(for='Telephone') Last Name
+              li
+                input#telephone(type='text' name='txtTelephone' placeholder='Enter Telephone')
+              small#telephoneErr
+              li
+                label(for='emailAddress') Email Address
+              li
+                input#txtemail(type='email' name='email' placeholder='Enter Email Address')
+              small#emailErr
+              li
+                label(for='Password') Password
+              li
+                input#txtpwd(type='password' name='password' placeholder='Enter a Minimum of 8 Character')
+              small#passwordErr
+              li
+                label(for='DateofBith') Date of Birth
+              li
+                input(type='date' name='txtDoB' data-date-inline-picker='true' placeholder='Enter the Date of Birth')
+              small#DoBErr
+              li
+                label(for='gender') Gender
+                input#male(type='radio' name='txtSex' size='25')
+                span Male
+                input#female(type='radio' name='txtSex' size='25')
+                span Female
+              small#genderError
+          .col
+            ul
+              li
+                label(for='District') Artist Location
+              li
+                input#district(type='text' name='txtDistrict' placeholder='Enter artist District')
+              small#districtErr
+              li
+                label(for='singleHit') Number of Singles
+              li
+                input#singles(type='number' name='txtSingles' placeholder='Enter Number of Hits')
+              small#singlesErr
+              li
+                label(for='Aliasname') Alias Name
+              li
+                input#aliasname(type='text' name='txtAliasname' placeholder='Enter Stage name')
+              small#aliasnameErr
+              li
+                label(for='NINno') NIN Number
+              li
+                input#NIN(type='text' name='txtNIN' placeholder='Enter NIN Number')
+              small#ninErr
+              li
+                label(for='albumnumber') Number of Albums
+              li
+                input#albums(type='number' name='txtAlbums' placeholder='Enter Number of Albums')
+              small#albumsErr
+              li
+                label(for='whereBased') Where Artist is based
+              li
+                input#based(type='text' name='txtBased' placeholder='Enter where artist is based')
+              small#basedErr
+              li
+                label(for='Datestarted') Date started singing
+              li
+                input(type='date' name='txtdatestarted' data-date-inline-picker='true' placeholder='Enter the Date of Birth')
+              small#startErr
+              li
+                label(for='profile') Profile Picture
+              li
+                input#avatar(type='file' name='Profilepic' accept='image/png, image/jpeg')
+              small#avatarErr
+        .bottoms
+          input(type='submit' value='Submit')
+          a(href='index.html') Return to Dashboard
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/musicartistValidate.js')

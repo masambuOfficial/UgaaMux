@@ -1,0 +1,128 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title UgaaMux - Music Artist Registration
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+    link(rel='stylesheet' href='/css/musicBands.css')
+    link(rel='stylesheet' href='/css/generalCss.css')
+  body
+    .container
+      h4 Music Label Registration Form
+      form#musiclabelsForm(name='musicLabels' method='POST' action='/api/musiclabel' enctype='multipart/form-data')
+        .row
+          .col
+            ul
+              li
+                label(for='labelID') Label ID
+              li
+                input#labelID(type='text' name='txtlabelID' placeholder='Enter the Label ID')
+              small#labelidErr
+              li
+                label(for='userrole') User Role
+              li
+                select#userRole(name='txtuserRole')
+                  option(selected='' value='Default') Please Select the User Role
+                  option(value='clerk')  Clerk 
+                  option(value='artist')  Artist 
+                small#userRoleErr
+              li
+                label(for='labelName') Label Name
+              li
+                input#labelname(type='text' name='txtlabelName' placeholder='Enter Real Label Name')
+              small#lbnameErr
+              li
+                label(for='labelHome') Label Home
+              li
+                input#labelHome(type='text' name='txtlabelHome' placeholder='Enter the label Home')
+              small#labelHomeErr
+              li
+                label(for='owner') Label Owner
+              li
+                input#labelOwner(type='text' name='txtlabelOwner' placeholder='Enter Owners Real Name ')
+              small#labelownerErr
+              li
+                label(for='Telephone') Telephone Number
+              li
+                input#telephone(type='text' name='txtphone' placeholder='Enter the label Telephone')
+              small#telErr
+              li
+                label(for='emailAddress') Email Address
+              li
+                input#txtemail(type='email' name='email' placeholder='Enter Email Address')
+              small#emailErr
+              li
+                label(for='emailAddress') Password
+              li
+                input#txtpwd(type='password' name='password' placeholder='Enter Password')
+              small#pwdErr
+              li
+                label(for='DateofBith') Date of Formation
+              li
+                input(type='date' name='txtformationDate' data-date-inline-picker='true' placeholder='Enter the Date of Birth')
+              small#dateErr
+          .col
+            ul
+              li
+                label(for='Sponsor')  Name of Sponsor
+              li
+                input#Sponsorname(type='text' name='txtSponsorname' placeholder='Enter Name of Sponsor')
+              span(style='font-size: 12px; font-style: italic; font-weight: bold; margin-left: 110px; color: red;')
+                | Optional
+                | field
+              li
+                label(for='slogan') Label Slogan
+              li
+                input#labelSlogan(type='text' name='txtlabelSlogan' placeholder='Enter the Labels Slogan')
+              small#sloganErr
+              li
+                label(for='Members') Number of Members
+              li
+                input#Member(type='number' name='txtmembers' placeholder='Enter the Number of members')
+              small#membersErr
+              li
+                label(for='ArtistManaged') Names of Artist Managed
+              li
+                input#managed(type='text' name='txtmanaged' placeholder='Enter the names of artist managed')
+                br
+                span(style='font-size: 10px; font-style: italic; font-weight: bold;')
+                  | Separate names with a
+                  | comma,
+              small#manageErr
+              li
+                label(for='profile') Label Icon
+              li
+                input#labelIcon(type='file' name='txtlabelIcon' accept='image/png, image/jpeg')
+              small#labeliconErr
+          .col
+            ul
+              h6(style='font-size: 12px; font-weight: bold;') Music Album Details
+              li
+                label(for='albumName') Album Name
+              li
+                input#albumname(type='text' name='txtalbumName' placeholder='Enter Album Name')
+              small#albumNameErr
+              li
+                label(for='songName') Names of Songs
+              li
+                input#songName(type='text' name='txtsongName' placeholder='Enter the names of for a particular Album')
+                br
+                span(style='font-size: 12px; font-style: italic; font-weight: bold;') Separate names with a comma,
+              small#songnameErr
+              li
+                label(for='Songs') Number of Songs
+              li
+                input#songs(type='number' name='txtsongs' placeholder='Enter the Number of Songs on a particular Album')
+              small#songsnumberErr
+              li
+                label(for='profile') Album Cover
+              li
+                input#albumCover(type='file' name='txtalbumCover' accept='image/png, image/jpeg')
+              small#albumcoverErr
+        .bottoms
+          input(type='submit' value='Submit')
+          a(href='/views/index.html') Return to Dashboard
+    script(src='/js/musiclabelValidate.js')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

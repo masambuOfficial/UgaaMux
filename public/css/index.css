@@ -1,0 +1,234 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+#sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #2e2e2e;
+    color: #fff;
+    transition: all 0.3s;
+}
+#content{
+    margin-left: 200px;
+    width: 100%;
+}
+
+.sidebar-header img{
+    width: 60%;
+    margin:30px 0px 0px 30px;
+}
+#sidebar ul li{
+    list-style: none;
+    margin-top: 10px;
+}
+#sidebar ul li a{
+    text-decoration: none;
+    color: white;
+}
+#sidebar ul li a:hover{
+    text-decoration: none;
+    color:#EF8800;
+    font-size: 12px;
+}
+.uploadContent{
+    margin:10px;
+    font-size: 12px;
+}
+#term{
+    width: 100%;
+}
+#term ul li{
+    display: block;
+}
+hr{
+    color: #EF8800;
+    width: 200px;
+}
+#bottoms{
+    position: absolute;
+    top: 250px;
+}
+#bottoms p{
+    text-align: center;
+    font-size: 12px;
+    padding-top: 20px;
+}
+#bottoms ul{
+    margin-top: 10px;
+}
+#bottoms ul li{
+    display: inline;
+    font-size: 14px;
+}
+#bottoms ul li img{
+    width: 15px;
+    margin-right: 20px;
+    color: white;
+}
+
+#icon{
+    float: left;
+    width: 100%;
+}
+#icon img{
+    width: 10%;
+}
+#search {
+    width: 760px;
+    margin: 20px auto;
+}
+#search i{
+    cursor: pointer;
+}
+
+.search-bar{
+    display: block;
+    width:100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 70px;
+    background-color: #D3D3D3;
+}
+#login{
+    float: right;
+    text-align: right;
+    width: 250px;
+    margin-left: 50px;
+}
+#login button{
+    text-align: center;
+    border: none;
+    background-color: #EF8800;
+    font-family: sans-serif;
+    padding: 10px 30px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+#login button:hover{
+    border: 1px solid #EF8800;
+    background-color: transparent;
+    color: #EF8800;
+}
+.top-categories{
+    margin-top: 10px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+.top-categories h3{
+    font-size: 20px;
+    padding-left: 20px;
+    font-weight:900;
+    font-style: normal;
+    
+}
+.top-categories p{
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px dotted #2e2e2e;
+}
+/* .overlay{
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+
+} */
+#welcome{
+    text-align: center;
+    padding: 50px 0px 50px 0px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/img/ugaamux-musician-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+#search-addon{
+    width:100px;
+}
+#search-addon img{
+    width: 50%;
+}
+
+/* Music Bands CSS */
+.Music_bands{
+    width: 100%;
+    background-color:#D3D3D3 ;
+    margin: 0px;
+}
+.Music_bands p{
+    padding-top: 20px;
+}
+.Music_bands ul{
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.Music_bands ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+.Music_bands h6{
+    background-color: #EF8800;
+    padding: 10px 20px;
+}
+.Music_bands p{
+    padding-bottom:10px;
+}
+
+.Music_bands a button{
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: #EF8800;
+}
+.Music_bands a button:hover{
+    background-color: transparent;
+    border: 1px solid #EF8800;
+}
+
+/* Artist CSS */
+.artist {
+    background-color: transparent;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+}
+.artist p{
+    margin-top: 10px;
+    padding-bottom:10px;
+}
+.artist ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    width: 100%;
+}
+.artist ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+}
+.artist ul li img{
+    width: 150px;
+}
+.artist ul li h6{
+    padding: 10px 5px;
+}
+.artist ul li a button{
+    border: none;
+    width: 100%;
+    padding: 5px 5px;
+    background-color: #EF8800;
+    font-size: 12px;
+}
+.artist ul li a button:hover{
+    background-color: transparent;
+    border: 1px solid #EF8800;
+}

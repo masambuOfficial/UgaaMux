@@ -1,0 +1,87 @@
+html {
+    font-family: sans-serif;
+    color: #333;
+    background-image: url('/img/ugaamux-musician-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+body {
+  height: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding-top: 60px;
+  
+}
+.btn1{
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color:goldenrod;
+  background-color: none;
+  margin: 10px 20px;
+  text-align: left;
+  cursor: pointer;
+
+}
+.btn2{
+  padding: 10px 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color:#333;
+  background-color: goldenrod;
+  margin: 10px auto;
+  float: right;
+  cursor: pointer;
+
+}
+.container{
+  border: 1px solid #aaa;
+  background-color: white;
+  border-radius: 10px;
+  padding-right: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* text-align: center; */
+}
+.container ul li{
+  list-style: none;
+  margin: 5px auto;
+}
+.container h3, p {
+  text-align: center;
+}
+h2 img{
+    width: 150px;
+    color: indigo;
+    display: block;
+    margin: auto;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width: 100%;
+  border: 1px solid #aaa;
+  margin: 8px auto;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+footer{
+  max-width: 500px;
+  /* margin: 10px auto; */
+  text-align: center;
+}
+footer ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 10px;
+  font-size: 12px;
+}
+footer ul li a{
+  text-decoration: none;
+  color: white;
+}
