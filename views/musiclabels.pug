@@ -5,13 +5,13 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title UgaaMux - Music Artist Registration
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+    link(href='/css/bootstrap.min.css' rel='stylesheet')
     link(rel='stylesheet' href='/css/musicBands.css')
     link(rel='stylesheet' href='/css/generalCss.css')
   body
     .container
       h4 Music Label Registration Form
-      form#musiclabelsForm(name='musicLabels' method='POST' action='/api/musiclabel' enctype='multipart/form-data')
+      form#musiclabelsForm(name='musicLabels' method='POST' action='/labelinfo/musiclabels' enctype='multipart/form-data')
         .row
           .col
             ul
@@ -23,11 +23,10 @@ html(lang='en')
               li
                 label(for='userrole') User Role
               li
-                select#userRole(name='txtuserRole')
+                select#userRole(name='role')
                   option(selected='' value='Default') Please Select the User Role
-                  option(value='clerk')  Clerk 
-                  option(value='artist')  Artist 
-                small#userRoleErr
+                  option(value='label')  Label  
+                small#userRoleError
               li
                 label(for='labelName') Label Name
               li
@@ -124,5 +123,5 @@ html(lang='en')
         .bottoms
           input(type='submit' value='Submit')
           a(href='/views/index.html') Return to Dashboard
+    script(src='/js/bootstrap.min.js')
     script(src='/js/musiclabelValidate.js')
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

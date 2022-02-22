@@ -2,14 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportmongoose = require('passport-local-mongoose');
 
-
 // Instantiating the Schema class and passing in my document structure as an argument to the schema class
 const musicbandSchema = new Schema({
-    txtuserRole: {
-        type: String,
-        required: true, 
-        trim: true,
-    },
     txtbandName: {
         type: String,
         required: true, 
@@ -35,11 +29,6 @@ const musicbandSchema = new Schema({
         required: true, 
         trim:true,
         unique: true,
-    },
-    password: {
-        type: String,
-        trim: true,
-        required: true,
     },
     txtformationDate: {
         type: Date,

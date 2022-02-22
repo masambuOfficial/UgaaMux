@@ -1,0 +1,119 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title UgaaMux - Talent Naturing & Exposure
+    // Bootstrap CSS
+    link(href='/css/bootstrap.min.css' rel='stylesheet')
+    link(rel='stylesheet' href='/css/generalCss.css')
+    link(rel='stylesheet' href='/css/index.css')
+    link(rel='stylesheet' href='/css/artistprofile.css')
+    link(rel='icon' href='favicon.png' sizes='52x52' type='image/png')
+  body
+    .wrapper
+      // Sidebar
+      nav#sidebar
+        .sidebar-header
+          h3
+            a(href='http://localhost:3000/')
+              img(src='/img/ugaamux-logo-01.svg' alt='UgaaMux')
+        ul
+          li
+            a(href='#') Music
+          li
+            a(href='#') Events
+          li
+            a(href='#') Features
+          li
+            a(href='#')  Contact Us
+        hr
+        #bottoms
+          #carouselExampleSlidesOnly.carousel.slide(data-bs-ride='carousel')
+            .carousel-inner
+              .carousel-item.active
+                a(href='#')
+                  img.d-block.w-100(src='/img/fallyIpupa.jpg' alt='...')
+              .carousel-item
+                a(href='#')
+                  img.d-block.w-100(src='/img/musicEvent.jpg' alt='...')
+              .carousel-item
+                a(href='#')
+                  img.d-block.w-100(src='/img/ntaateAudio.jpg' alt='...')
+          div
+            ul
+              li
+                a(href='#')
+                  img(src='/img/facebook.svg' alt='')
+              li
+                a(href='#')
+                  img(src='/img/twitter.svg' alt='')
+              li
+                a(href='#')
+                  img(src='/img/youtube.svg' alt='')
+            hr
+          #term
+            ul
+              li
+                a(href='#')  Help 
+              li
+                a(href='#')  Privacy 
+              li
+                a(href='#')  Terms 
+      // Page Content
+      #content
+        #header
+          .row
+            #profilepic
+              img(src='/'+artist.Profilepic alt='')
+        #bodyContent
+          .row
+            .col
+              table
+                tr
+                  td.cool Artist ID
+                  td.cool1 #{artist.txtArtistID}
+                tr
+                  td.cool First Name
+                  td.cool1 #{artist.txtfirstName} 
+                tr
+                  td.cool Last Name
+                  td.cool1 #{artist.txtlastName} 
+                tr
+                  td.cool Telephone
+                  td.cool1 #{artist.txtTelephone} 
+                tr
+                  td.cool Email Address
+                  td.cool1 #{artist.email}
+                tr
+                  td.cool Date of Birth
+                  td.cool1 #{artist.txtDoB}
+                tr
+                  td.cool Gender
+                  td.cool1 #{artist.txtSex}
+            .col
+              table
+                tr
+                  td.cool Artist Location
+                  td.cool1 #{artist.txtDistrict}
+                tr
+                  td.cool Number of Singles
+                  td.cool1 #{artist.txtSingles}
+                tr
+                  td.cool Stage Name
+                  td.cool1 #{artist.txtAliasname}
+                tr
+                  td.cool NIN Number
+                  td.cool1 #{artist.txtNIN}
+                tr
+                  td.cool Number of Albums
+                  td.cool1 #{artist.txtAlbums}
+                tr
+                  td.cool Based
+                  td.cool1 #{artist.txtBased}
+                tr
+                  td.cool Date Started Singing
+                  td.cool1 #{artist.txtdatestarted}
+    // Fontawesome JS
+    script(src='https://use.fontawesome.com/bcb3e3827d.js')
+    // Bootstrap JS
+    script(src='/js/bootstrap.min.js')

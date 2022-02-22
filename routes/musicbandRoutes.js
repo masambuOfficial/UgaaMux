@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
-const Bandmodel = require("../models/musicBand");
+const BandReg = require("../models/musicBand");
+const User = require("../models/User");
 
 const router = express.Router();
 
@@ -28,14 +29,18 @@ router.post(
     async (req, res) => {
   console.log(req.body);
   try {
-    const bandReg = new Bandmodel(req.body);
+    const bandReg = new BandReg(req.body);
+    const user = new User(req.body);
     bandReg.Profilepic = req.file.path;
-    console.log(bandReg);
-    console.log("This is the image you want to upload", req.file);
-    await Bandmodel.register(bandReg, req.body.password, (err) => {
+
+    // console.log(bandReg);
+    // console.log("This is the image you want to upload", req.file);
+    
+    await bandReg.save();
+    await User.register(user, req.body.password, (err) => {
       if (err) {
         throw err;
-        console.log("Data has not been posted", err);
+
       }
       res.redirect("/bandinfo/musicbands");
     });

@@ -1,0 +1,22 @@
+
+#content h1{
+    background-color:#EF8800;
+    padding: 50px;
+}
+#content p{
+    padding: 10px 50px;
+}
+#content a{
+    padding: 0px 50px;
+}
+#content a button{
+    padding: 5px 20px;
+    border: none;
+    background-color: #EF8800;
+}
+#content h2{
+    padding: 5px 50px;
+}
+#content ul{
+    padding: 5px 100px;
+}

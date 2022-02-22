@@ -1,0 +1,41 @@
+#content {
+    padding: 20px 100px;
+}
+#band h1{
+    font-size:22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#band h2 span{
+    font-weight: normal;
+}
+#band h2{
+    font-size: 15px;
+    font-weight: 700;
+}
+#band p{
+    text-align: justify;
+}
+#band hr{
+    width: 100%;
+}
+#video iframe{
+    width: 100%;
+}
+#details{
+    background-color: darkgray;
+    padding: 10px 20px;
+}
+#details a button{
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: #EF8800;
+}
+#details a button:hover{
+    background-color: transparent;
+    border: 1px solid #EF8800;
+}
+#details h2{
+    margin-top: 20px;
+}

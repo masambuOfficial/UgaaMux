@@ -29,11 +29,6 @@ const musicartistSchema = new Schema({
         trim:true,
         unique: true,
     },
-    password: {
-        type: String,
-        trim: true,
-        required: true,
-    },
     txtDoB: {
         type: Date,
         required: true, 

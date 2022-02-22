@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title UgaaMux - Login
+    link(rel='stylesheet' href='/css/login.css')
+  body
+    .container
+      h2
+        img(src='/img/ugaamux-logo-01.svg')
+      h3 Sign In
+      p to continue to UgaaMux Dashboard
+      form(action='/logininfo/login' method='POST' name='login')
+        ul
+          li
+            input(type='email' placeholder='Enter you email Address' name='emailAddress')
+          li
+            input(type='password' placeholder='Enter your password' name='password')
+        a(href='http://localhost:3000/terms')
+          button.btn1 Create account
+        input.btn2(type='submit' value='SignIn')
+    footer
+      ul
+        li
+          a(href='#')  Help 
+        li
+          a(href='#')  Privacy 
+        li
+          a(href='#')  Terms 

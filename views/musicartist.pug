@@ -23,9 +23,8 @@ html(lang='en')
               li
                 label(for='userrole') User Role
               li
-                select#userRole(name='txtuserRole')
+                select#userRole(name='role')
                   option(selected='' value='Default') Please Select the User Role
-                  option(value='clerk')  Clerk 
                   option(value='artist')  Artist 
                 small#userRoleErr
               li
@@ -39,7 +38,7 @@ html(lang='en')
                 input#lstname(type='text' name='txtlastName' placeholder='Enter Real Last Name')
               small#lstnameErr
               li
-                label(for='Telephone') Last Name
+                label(for='Telephone') Telephone
               li
                 input#telephone(type='text' name='txtTelephone' placeholder='Enter Telephone')
               small#telephoneErr

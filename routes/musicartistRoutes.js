@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
-const Artistmodel = require("../models/musicArtist");
+const ArtistReg = require("../models/musicArtist");
+const User = require("../models/User");
 
 const router = express.Router();
 
@@ -28,14 +29,18 @@ router.post(
     async (req, res) => {
   console.log(req.body);
   try {
-    const artistReg = new Artistmodel(req.body);
+    const artistReg = new ArtistReg(req.body);
+    const user = new User(req.body);
     artistReg.Profilepic = req.file.path;
-    console.log(artistReg);
-    console.log("This is the image you want to upload", req.file);
-    await Artistmodel.register(artistReg, req.body.password, (err) => {
+
+    // console.log(artistReg);
+    // console.log("This is the image you want to upload", req.file);
+    
+    await artistReg.save();
+    await User.register(user, req.body.password, (err) => {
       if (err) {
         throw err;
-        console.log("Data has not been posted", err);
+        
       }
       res.redirect("/artistinfo/musicartist");
     });
@@ -45,5 +50,20 @@ router.post(
     console.log(err);
   }
 });
+
+router.get('/profile', async(req, res) => {
+  if (req.session.user) {
+      try {
+          const user = await ArtistReg.findOne({ email: req.user.email });
+          console.log(user);
+          res.render('artistprofile', { artist: user });
+      } catch {
+          res.status(400).send('Unable to find artist');
+      }
+  } else {
+      res.redirect('/logininfo/login');
+  }
+});
+
 
 module.exports = router;

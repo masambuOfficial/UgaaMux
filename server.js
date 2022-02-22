@@ -2,22 +2,22 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const Labelmodel = require("./models/musiclabels");
-const Artistmodel = require("./models/musicArtist");
-const Bandmodel = require("./models/musicBand");
-const Contactus = require("./models/contactUsModel");
 const passport = require("passport");
+const userModel = require("./models/User");
 const expressSession = require('express-session')({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
 });
 
+const router = express.Router();
 
 const musiclabelRoutes = require("./routes/musiclabelsRoutes");
 const musicartistRoutes = require("./routes/musicartistRoutes");
 const musicbandRoutes = require("./routes/musicbandRoutes");
 const contactusRoutes = require("./routes/contactusRoutes");
+const loginRoutes = require("./routes/loginRoutes");
+
 
 require('dotenv').config();
 
@@ -40,24 +40,18 @@ mongoose.connection
 
 
 // Middleware
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true})); // Bodyparser middleware 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(Labelmodel.createStrategy());
-passport.serializeUser(Labelmodel.serializeUser());
-passport.deserializeUser(Labelmodel.deserializeUser());
 
-passport.use(Artistmodel.createStrategy());
-passport.serializeUser(Artistmodel.serializeUser());
-passport.deserializeUser(Artistmodel.deserializeUser());
+passport.use(userModel.createStrategy());
+passport.serializeUser(userModel.serializeUser());
+passport.deserializeUser(userModel.deserializeUser());
 
-passport.use(Bandmodel.createStrategy());
-passport.serializeUser(Bandmodel.serializeUser());
-passport.deserializeUser(Bandmodel.deserializeUser());
 
 
 // Configs or settings
@@ -68,12 +62,32 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/login', (req, res) => {
-  res.sendFile(__dirname + '/views/login.html');
-});
+router.get('/artistpage', (req, res) => {
+  res.render("artistprofile")
+})
 
 app.get('/dashboard', (req, res) => {
   res.sendFile(__dirname + '/views/dashboard.html');
+});
+
+app.get('/clerkdashboard', (req, res) => {
+  res.sendFile(__dirname + '/views/clerkdashboard.html');
+});
+
+app.get('/soutiyaAfrica', (req, res) => {
+  res.sendFile(__dirname + '/views/soutiyaAfrica.html');
+});
+
+app.get('/terms', (req, res) => {
+  res.sendFile(__dirname + '/views/terms.html');
+});
+
+app.get('/artistprofile', (req, res) => {
+  res.sendFile(__dirname + '/views/artistprofile.html');
+});
+
+app.get('/privacy', (req, res) => {
+  res.sendFile(__dirname + '/views/privacy.html');
 });
 
 app.get('/musiclabels', (req, res) => {
@@ -99,6 +113,7 @@ app.use("/labelinfo", musiclabelRoutes);
 app.use("/artistinfo", musicartistRoutes);
 app.use("/bandinfo", musicbandRoutes);
 app.use("/contactinfo", contactusRoutes);
+app.use("/logininfo", loginRoutes);
 
 
 // 

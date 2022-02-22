@@ -6,11 +6,11 @@ const emailaddress = document.musicBands.email;
 const pwd = document.musicBands.password;
 const startDate = document.musicBands.txtformationDate;
 const numberofMember = document.musicBands.txtnumberofMembers;
-const bandslogan = document.musicBands.txtlabelSlogan;
+const slogan = document.musicBands.txtlabelSlogan;
 const albums = document.musicBands.txtnumberofAlbums;
 const category = document.musicBands.txtmusicCategory;
 const icon = document.musicBands.txtbandicon;
-const user = document.musicBands.txtuserRole;
+const banduser = document.musicBands.role;
 
 
 const bandnameError = document.getElementById("bandNameErr");
@@ -33,10 +33,11 @@ const phoneformat = /^[0-9]{10}$/;
 const alphaNumeric = /^[a-zA-Z0-9]+$/;
 const emailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
 const systemIDformat = /^[a-z]{3}\d+[a-z]{3}/;
-const nationalIDFormat = /^[A-Z]{2}\d+[A-Z]{3}/;
+const nationalIDFormat = /^[A-Z]{2}[0-9]{8}[A-Z]{2}[0-9]{1}[A-Z]{1}$/; // e.g CM90078102RT1H
 const pwdRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/; 
 
-const bandValidate = () => {
+const bandValidate = (event) => {
+    let isValid = true;
     // validating the band name field
     const musicbandname = bandname.value.trim();
         if (musicbandname == ""){
@@ -44,11 +45,13 @@ const bandValidate = () => {
             bandnameError.innerHTML = "Field is required";
             bandnameError.style = "color:red; margin-left: 110px; font-size:10px";
             bandname.focus();
+            isValid = false;
         }else if (!musicbandname.match(capitalize)){
             bandname.style.border = "1px solid red";
             bandnameError.innerHTML = "Band name must be alphanumeric and starts with Capital letter";
             bandnameError.style = "color:red; margin-left: 110px; font-size:10px";
             bandname.focus();
+            isValid = false;
         }else{
             bandname.style.border = "1px solid green";
             bandnameError.innerHTML = ""
@@ -60,11 +63,13 @@ const bandValidate = () => {
             bandhomeError.innerHTML = "Field is required";
             bandhomeError.style = "color:red; margin-left: 110px; font-size:10px";
             bandhome.focus();
+            isValid = false;
         }else if (!musicbandhome.match(alphaNumeric)){
             bandhome.style.border = "1px solid red";
             bandhomeError.innerHTML = "Band home must be alphanumeric";
             bandhomeError.style = "color:red; margin-left: 110px; font-size:10px";
             bandhome.focus();
+            isValid = false;
         }else{
             bandhome.style.border = "1px solid green";
             bandhomeError.innerHTML = ""
@@ -76,11 +81,13 @@ const bandValidate = () => {
                 bandownerError.innerHTML = "Field is required";
                 bandownerError.style = "color:red; margin-left: 110px; font-size:10px";
                 bandowner.focus();
+                isValid = false;
             }else if (!musicbandhome.match(capitalize)){
                 bandowner.style.border = "1px solid red";
                 bandownerError.innerHTML = "Band owner starts with Capital letter";
                 bandownerError.style = "color:red; margin-left: 110px; font-size:10px";
                 bandowner.focus();
+                isValid = false;
             }else{
                 bandowner.style.border = "1px solid green";
                 bandownerError.innerHTML = ""
@@ -92,6 +99,7 @@ const bandValidate = () => {
                 bandtelephoneError.innerHTML = "Band Phone field is  required";
                 bandtelephoneError.style = "color:red; font-size: 10px";
                 telephone.focus();
+                isValid = false;
              } 
             //else if (!labelphone.match(phoneformat)){
             //     telephone.style.border ="1px solid red";
@@ -109,11 +117,13 @@ const bandValidate = () => {
                 bandemailError.innerHTML = "Label's email field is required";
                 bandemailError.style = "color:red; margin-left: 110px; font-size: 10px";
                 emailaddress.focus();
+                isValid = false;
             }else if (!bandemailAddress.match(emailformat)){
                 emailaddress.style.border ="1px solid red";
                 bandemailError.innerHTML = "Email doesn't match the format";
                 bandemailError.style = "color:red; margin-left: 110px; font-size:10px";
                 emailaddress.focus();
+                isValid = false;
             }else {
                 emailaddress.style.border ="1px solid green";
                 bandemailError.innerHTML = "";
@@ -125,11 +135,13 @@ const bandValidate = () => {
                 bandpasswordError.innerHTML = "Password Field is required";
                 bandpasswordError.style = "color:red; margin-left: 110px; font-size: 10px";
                 pwd.focus();
+                isValid = false;
             }else if (!bandPassword.match(pwdRegex)){
                 pwd.style.border ="1px solid red";
                 bandpasswordError.innerHTML = "Password must be atleast a Minimum of 8 Character containing at least one lowercase letter, one uppercase letter, one numeric digit, and one special character";
                 bandpasswordError.style = "color:red; margin-left: 110px; font-size: 10px";
                 pwd.focus();
+                isValid = false;
             }else {
                 pwd.style.border = "1px solid green";
                 bandpasswordError.innerHTML = "";
@@ -139,14 +151,10 @@ const bandValidate = () => {
             if (bandstartDate == ""){
                 startDate.style.border ="1px solid red";
                 bandstartdateError.innerHTML = "Band Start Date field is  required";
-                bandstartdateError.style = "color:red; font-size: 10px";
+                bandstartdateError.style = "color:red; margin-left: 110px; font-size: 10px";
                 startDate.focus();
+                isValid = false;
             } 
-            //else if (!labelphone.match(phoneformat)){
-            //     telephone.style.border ="1px solid red";
-            //     labeltelephoneError.innerHTML = "The telephone Number should be 10 digits starting with a 0";
-            //     labeltelephoneError.style = "color:red; font-size: 10px";
-            //     telephone.focus();}
             else {
                 startDate.style.border = "1px solid green";
                 bandstartdateError.innerHTML = "";
@@ -158,21 +166,13 @@ const bandValidate = () => {
                 bandmembersError.innerHTML = "Band number of Member field is  required";
                 bandmembersError.style = "color:red; font-size: 10px";
                 numberofMember.focus();
+                isValid = false;
             }else {
                 numberofMember.style.border = "1px solid green";
                 bandmembersError.innerHTML = "";
             }
     // validating the Band Slogan field
-        // const musicbandslogan = bandslogan.value.trim();
-        //     if (musicbandslogan == ""){
-        //         bandslogan.style.border ="1px solid red";
-        //         bandsloganError.innerHTML = "Band slogan field is  required";
-        //         bandsloganError.style = "color:red; font-size: 10px";
-        //         bandslogan.focus();
-        //     }else {
-        //         bandslogan.style.border = "1px solid green";
-        //         bandsloganError.innerHTML = "";
-        //     }
+        
     // validating the Band number of Albums field
         const bandalbums = albums.value.trim();
             if (bandalbums == ""){
@@ -180,6 +180,7 @@ const bandValidate = () => {
                 bandalbumsError.innerHTML = "Band Albums field is  required";
                 bandalbumsError.style = "color:red; font-size: 10px";
                 albums.focus();
+                isValid = false;
             }else {
                 albums.style.border = "1px solid green";
                 bandalbumsError.innerHTML = "";
@@ -191,18 +192,25 @@ const bandValidate = () => {
                 bandcategoryError.innerHTML = "Band Albums field is  required";
                 bandcategoryError.style = "color:red; font-size: 10px";
                 category.focus();
+                isValid = false;
             }else {
                 category.style.border = "1px solid green";
                 bandcategoryError.innerHTML = "";
             }
-    // Validating select
-            if (user.value == "") {
-                user.style.border ="1px solid red";    
-                userRoleError.innerHTML = "Please select your country";
-                userRoleError.style = "color:red; font-size:12px; padding-left:5px";    
-                user.focus();        
-            } else {
+    // Validating user role select
+            if (banduser.value == "Default"){
+                userRoleError.innerHTML = "Please select the user role to continue";
+                userRoleError.style = "color:red; font-size: 10px;";
+                banduser.focus();
+                isValid = false;
+            }else {
                 userRoleError.innerHTML = "";
+            }
+    
+
+            if (!isValid){
+                event.preventDefault();
+                return false;
             }
             
 };
@@ -210,7 +218,7 @@ const bandValidate = () => {
 
 
 const bandForm = document.getElementById("musicbandsForm");
-    bandForm.addEventListener('submit', bandValidate);
-    // bandForm.addEventListener ('submit', (e) => {
-    //     e.preventDefault();
-    // });
+    bandForm.addEventListener('submit', (event) =>{
+        bandValidate(event)
+    });
+    

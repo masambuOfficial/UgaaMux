@@ -36,11 +36,6 @@ const musiclabelSchema = new Schema({
         trim:true,
         unique: true,
     },
-    password: {
-        type: String,
-        trim: true,
-        required: true,
-    },
     txtformationDate: {
         type: Date,
         required: true, 

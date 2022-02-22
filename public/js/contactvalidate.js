@@ -6,7 +6,6 @@ const message = document.contactUs.txtmessage;
 const fullnameError = document.getElementById("fullnameErr");
 const emailError = document.getElementById("emailErr");
 const telephoneError = document.getElementById("telephoneErr");
-
 const emailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
 
 // Validating Contact us form

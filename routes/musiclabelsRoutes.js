@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const Labelmodel = require("../models/musiclabels");
+const LabelReg = require("../models/musiclabels");
+const User = require("../models/User");
 
 const router = express.Router();
 
@@ -32,17 +33,19 @@ router.post(
     ]),
     async (req, res) => {
       try {
-        const labelmodel = new Labelmodel(req.body);
-        labelmodel.txtlabelIcon = req.files.txtlabelIcon[0].path;
-        labelmodel.txtalbumCover = req.files.txtalbumCover[0].path;
-        console.log('These are  the images you want to uploads');
+        const labelReg = new LabelReg(req.body);
+        const user = new User(req.body);
+        labelReg.txtlabelIcon = req.files.txtlabelIcon[0].path;
+        labelReg.txtalbumCover = req.files.txtalbumCover[0].path;
+        
+        // console.log('These are  the images you want to uploads');
+        // console.log(labelmodel);
   
-        console.log(labelmodel);
-  
-        await Labelmodel.register(labelmodel, req.body.password, (err) => {
+        await labelReg.save();
+        await User.register(user, req.body.password, (err) =>{
           if (err) {
             throw err;
-            console.log('Data has not been posted', err);
+            
           }
           res.redirect('/labelinfo/musiclabels');
         });
